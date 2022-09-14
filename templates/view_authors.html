@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% include 'style.html' %}
+</head>
+<body>
+{% include 'navbar.html' %}
+
+
+<form>
+    <input type="text" name="last_name">
+    <input type="submit" value="szukaj">
+</form>
+<table style="background-color: aquamarine">
+<tr>
+    <th>Imie</th> <th>Nazwisko</th>
+</tr>
+{% for author in authors %}
+    <tr>
+        <td style="background-color: azure">{{ author.first_name }}</td>
+       <td><a href="/authors/{{ author.id }}/">{{ author.last_name }}</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+</body>
+</html>
