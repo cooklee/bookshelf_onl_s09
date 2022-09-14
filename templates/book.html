@@ -14,18 +14,19 @@
 
 To jest szczegółowy widok Autora:
 <h1>
-    {{ author.first_name }} {{ author.last_name }}
+    {{ ksiazka.title }}<br>
+    {{ ksiazka.author }}
 </h1>
 <h2>książki autora</h2>
 <div class="content">
     <table style="background-color: aquamarine">
         <tr>
-            <th>Title</th>
+            <th>Gatunek</th>
 
         </tr>
-        {% for book in author.book_set.all %}
+        {% for item in ksiazka.genres.all %}
             <tr>
-                <td style="background-color: azure">{{ book.title }}</td>
+                <td style="background-color: azure">{{ item.name }}</td>
             </tr>
         {% endfor %}
     </table>

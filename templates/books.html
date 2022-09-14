@@ -11,30 +11,20 @@
 <body>
 {% include 'navbar.html' %}
 
-
-To jest szczegółowy widok Autora:
-<h1>
-    {{ author.first_name }} {{ author.last_name }}
-</h1>
-<h2>książki autora</h2>
 <div class="content">
     <table style="background-color: aquamarine">
         <tr>
             <th>Title</th>
-
+            <th>Autor</th>
         </tr>
-        {% for book in author.book_set.all %}
+        {% for book in ksiazki %}
             <tr>
-                <td style="background-color: azure">{{ book.title }}</td>
+                <td style="background-color: azure"><a href="/books/{{ book.id }}/"> {{ book.title }}</a></td>
+                <td><a href="/authors/{{ book.author.id }}/">{{ book.author }}</a></td>
             </tr>
         {% endfor %}
     </table>
 </div>
-
-</table>
-
-
-
 
 
 </body>
