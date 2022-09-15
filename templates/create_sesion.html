@@ -1,0 +1,25 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>
+        Klucz:
+        <input type="text" name="key">
+    </label>
+    <label>
+        Wartość:
+        <input type="text" name="value">
+    </label>
+    <input type="submit">
+</form>
+<table>
+    <tr>
+        <th>klucz</th>
+        <th>wartosc</th>
+    </tr>
+    {% for key, val in sessje.items %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ val }}</td>
+        </tr>
+    {% endfor %}
+</table>
+

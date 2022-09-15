@@ -28,4 +28,15 @@ urlpatterns = [
     path('books/', views.books),
     path('books/<int:book_id>/', views.BookDetailView.as_view()),
     path('add_book/', views.AddBookView.as_view()),
+
+    path('add_session/', views.AddSessionView.as_view()),
+    path('add_cookie/', views.AddCookieView.as_view()),
+
+    path('set-session/', views.CounterSetView.as_view()),
+    path('show-session/', views.CounterShowView.as_view()),
+    path('delete-session/', views.CounterDeleteView.as_view()),
+
+    path('add_zad3_session/', views.Zad3Sessije.as_view()),
+
+
 ]
